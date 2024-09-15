@@ -36,15 +36,27 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Internship",
-    location: "Ahemdabad, GJ",
+    title: "Software Developer",
+    companyname: "Sankhyana Consultancy Service",
+    location: "Remote",
     description:
-      "Developed and implemented UI components using ReactJS for a Book Store app during my internship at Tatvsoft. Enhanced user experience with responsive design and integrated API features for seamless interaction.",
-    icon: React.createElement(FaReact),
-    date: "2023",
+      "I have contributed to building forms for an LMS website and integrated PayPal and Razorpay payment gateways using Node.js and React. Currently, I am working on a MERN project to enhance website features and improve user experience.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Auguest,2024 - Present",
   },
   {
+    title: "Full-Stack Developer Intern",
+    companyname: "Code Expert Solutions",
+    location: "Surat, GJ",
+    description:
+      "During my internship at Code Expert Solution as a Full Stack Web Developer, I led the development of Propluse, a freelancing marketplace. Using the MERN stack, I built key features like user authentication, project management, and payment integration, working closely with a team to ensure seamless front- and back-end integration.",
+    icon: React.createElement(CgWorkAlt),
+    date: "April - 2024",
+  },
+  
+  {
     title: "Computer Engineering",
+    companyname: "G.H. Patel College of Engineering & Technology",
     location: "Anand, GJ",
     description:
       "Graduated with a Bachelor of Engineering in Computer Engineering from G.H. Patel College of Engineering & Technology in May 2024.",
@@ -52,13 +64,15 @@ export const experiencesData = [
     date: "2020 - 2024",
   },
   {
-    title: "Full-Stack Developer Intern",
-    location: "Surat, GJ",
+    title: "Internship",
+    companyname: "TatvaSoft: Software Development Company",
+    location: "Ahemdabad, GJ",
     description:
-      "During my internship at Code Expert Solution, I served as a Full Stack Web Developer, where I led the development of Propluse, a dynamic freelancing marketplace. Utilizing the MERN stack (MongoDB, Express.js, React, Node.js), I developed and optimized key features such as user authentication, project management, and payment processing. My role involved close collaboration with a team to ensure seamless front-end and back-end integration, while adhering to best practices in coding and agile development.",
-    icon: React.createElement(CgWorkAlt),
-    date: "April - 2024",
+      "Developed and implemented UI components using ReactJS for a Book Store app during my internship at Tatvsoft. Enhanced user experience with responsive design and integrated API features for seamless interaction.",
+    icon: React.createElement(FaReact),
+    date: "2023",
   },
+
 ] as const;
 
 export const projectsData = [
