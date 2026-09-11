@@ -1,134 +1,116 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import Propluse from "@/public/Propluse.png";
+import { FaReact } from "react-icons/fa";
 import Dashboard from "@/public/Dashboard.png";
-import Referal from "@/public/Referal.png";
-import invoice from "@/public/invoice.png";
 
 export const links = [
-  {
-    name: "Home",
-    hash: "#home",
-  },
-  {
-    name: "About",
-    hash: "#about",
-  },
-  {
-    name: "Projects",
-    hash: "#projects",
-  },
-  {
-    name: "Skills",
-    hash: "#skills",
-  },
-  {
-    name: "Experience",
-    hash: "#experience",
-  },
-  {
-    name: "Contact",
-    hash: "#contact",
-  },
+  { name: "Home", hash: "#home" },
+  { name: "About", hash: "#about" },
+  { name: "Projects", hash: "#projects" },
+  { name: "Skills", hash: "#skills" },
+  { name: "Experience", hash: "#experience" },
+  { name: "Contact", hash: "#contact" },
 ] as const;
 
 export const experiencesData = [
+  {
+    title: "Data Analyst",
+    companyname: "AU Small Finance Bank",
+    location: "Jaipur, Rajasthan",
+    description:
+      "Working with Python, SQL, Pandas and Excel to analyze business and credit portfolio data. Building automated reporting and data-processing workflows, performing data cleaning, validation and exploratory analysis to support data-driven decision making.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Current",
+  },
   {
     title: "Software Developer",
     companyname: "Sankhyana Consultancy Service",
     location: "Remote",
     description:
-      "I have contributed to building forms for an LMS website and integrated PayPal and Razorpay payment gateways using Node.js and React. Currently, I am working on a MERN project to enhance website features and improve user experience.",
+      "Contributed to web applications using React and Node.js, including form development, payment gateway integrations and full-stack feature development.",
     icon: React.createElement(CgWorkAlt),
-    date: "Auguest,2024 - Present",
+    date: "2024",
   },
   {
     title: "Full-Stack Developer Intern",
     companyname: "Code Expert Solutions",
-    location: "Surat, GJ",
+    location: "Surat, Gujarat",
     description:
-      "During my internship at Code Expert Solution as a Full Stack Web Developer, I led the development of Propluse, a freelancing marketplace. Using the MERN stack, I built key features like user authentication, project management, and payment integration, working closely with a team to ensure seamless front- and back-end integration.",
+      "Built features for a freelancing marketplace using the MERN stack, including authentication, project workflows and payment integrations.",
     icon: React.createElement(CgWorkAlt),
-    date: "April - 2024",
+    date: "2024",
   },
-  
   {
     title: "Computer Engineering",
     companyname: "G.H. Patel College of Engineering & Technology",
-    location: "Anand, GJ",
+    location: "Anand, Gujarat",
     description:
-      "Graduated with a Bachelor of Engineering in Computer Engineering from G.H. Patel College of Engineering & Technology in May 2024.",
+      "Bachelor of Engineering in Computer Engineering. Built a foundation in programming, software engineering and problem solving.",
     icon: React.createElement(LuGraduationCap),
     date: "2020 - 2024",
   },
   {
-    title: "Internship",
-    companyname: "TatvaSoft: Software Development Company",
-    location: "Ahemdabad, GJ",
+    title: "ReactJS Intern",
+    companyname: "TatvaSoft",
+    location: "Ahmedabad, Gujarat",
     description:
-      "Developed and implemented UI components using ReactJS for a Book Store app during my internship at Tatvsoft. Enhanced user experience with responsive design and integrated API features for seamless interaction.",
+      "Developed responsive UI components and API-integrated features for a Book Store application using ReactJS.",
     icon: React.createElement(FaReact),
     date: "2023",
   },
-
 ] as const;
 
 export const projectsData = [
   {
-    title: "PROPLUSE",
+    title: "LLM-Enhanced Product Price Prediction",
     description:
-      "Propluse is a MERN stack freelancing marketplace featuring user authentication, project management, and Stripe payments.",
-    tags: ["React", "Node.js", "MongoDB", "Stripe", "Express"],
-    imageUrl: Propluse,
-    url: "https://github.com/J3045/Propluse/tree/main/Propluse_Fullstack",
-  },
-  
-  {
-    title: "Invoice Generator",
-    description:
-      "Invoice Generator quickly creates and manages customizable invoices with client details and payment terms.",
-    tags: ["React", "Tailwind", "JsPdf", "Bootstrap"],
-    imageUrl: invoice,
-    url: "https://github.com/J3045/AurikaTech__/tree/master",
-  },
-  {
-    title: "Refer & Earn",
-    description:
-      "Refer & Earn allows users to generate referral emails to earn rewards.",
-    tags: ["React", "Tailwind", "Node.js","Prisma","SQL","Google Cloud"],
-    imageUrl: Referal,
-    url: "https://66940e6d4b9eb491ddf31ea2--steady-khapse-62eef7.netlify.app/",
-  },
-  {
-    title: "Dashboard",
-    description:
-      "A React-based data visualization tool that connects to MongoDB, displaying interactive charts and graphs from JSON data.",
-    tags: ["React", "Chart.js", "Node.js", "Tailwind", "Express.js"],
+      "Machine learning project exploring LLM-assisted preprocessing and feature engineering for product price prediction, using neural networks and modern fine-tuning techniques.",
+    tags: ["Python", "PyTorch", "Machine Learning", "LLMs", "QLoRA"],
     imageUrl: Dashboard,
-    url:"https://github.com/J3045/Dashboard",
+    url: "https://github.com/J3045",
+  },
+  {
+    title: "Multi-Agent AI Trading System",
+    description:
+      "Agentic AI trading simulation that combines LLM-powered agents, MCP, API integrations and portfolio intelligence workflows for research, decision support and monitoring.",
+    tags: ["Python", "LLMs", "Agentic AI", "MCP", "SQLite", "Gradio"],
+    imageUrl: Dashboard,
+    url: "https://github.com/J3045",
+  },
+  {
+    title: "Data Analytics Dashboard",
+    description:
+      "Interactive data visualization application that processes structured data and presents insights through dynamic charts and dashboards.",
+    tags: ["Python", "SQL", "Data Analytics", "React", "Visualization"],
+    imageUrl: Dashboard,
+    url: "https://github.com/J3045/Dashboard",
   },
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
+  "Python",
+  "Machine Learning",
+  "PyTorch",
+  "Pandas",
+  "NumPy",
+  "SQL",
+  "Data Analysis",
+  "Feature Engineering",
+  "Generative AI",
+  "LLMs",
+  "LangChain",
+  "OpenAI SDK",
+  "RAG",
+  "Agentic AI",
+  "MCP",
+  "CrewAI",
+  "Docker",
+  "AWS",
+  "REST APIs",
+  "Git",
   "React",
   "Next.js",
   "Node.js",
-  "c/C++",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "SQL",
-  "Cloudflare",
-  "Hono",
-  "Express",
-  "PostgreSQL",
-  "Python",
-  "Java",
-  "Framer Motion",
+  "TypeScript",
 ] as const;
