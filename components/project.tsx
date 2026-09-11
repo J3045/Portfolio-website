@@ -2,46 +2,7 @@
 import { projectsData } from "@/lib/data";
 import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
-
-type ProjectProps = (typeof projectsData)[number] & { index: number };
-
-const visuals = [
-  { icon: "◌", label: "ML / LLM", glow: "from-violet-500/30 via-indigo-500/10 to-transparent" },
-  { icon: "✦", label: "AGENT SYSTEM", glow: "from-cyan-500/25 via-emerald-500/10 to-transparent" },
-  { icon: "▦", label: "DATA / INSIGHTS", glow: "from-blue-500/25 via-violet-500/10 to-transparent" },
-];
-
-export default function Project({ title, description, tags, url, index }: ProjectProps) {
-  const visual = visuals[index % visuals.length];
-  return (
-    <motion.a
-      href={url}
-      target="_blank"
-      rel="noreferrer"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -8 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.35 }}
-      className="group relative min-h-[430px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[.035] p-6 shadow-2xl shadow-black/20"
-    >
-      <div className={"absolute inset-x-0 top-0 h-56 bg-gradient-to-br " + visual.glow} />
-      <div className="absolute -right-10 top-12 h-44 w-44 rounded-full border border-white/10 bg-white/[.03] blur-[1px]" />
-      <div className="absolute right-8 top-8 text-7xl font-light text-white/10 transition duration-500 group-hover:scale-110 group-hover:text-white/20">{visual.icon}</div>
-
-      <div className="relative flex h-full flex-col">
-        <div className="mb-20 inline-flex w-fit rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[10px] font-semibold tracking-[0.2em] text-white/50">
-          {visual.label}
-        </div>
-        <div className="mb-3 flex items-start justify-between gap-3">
-          <h3 className="text-2xl font-semibold tracking-tight text-white">{title}</h3>
-          <FiArrowUpRight className="mt-1 text-xl text-white/40 transition group-hover:text-white" />
-        </div>
-        <p className="leading-7 text-white/50">{description}</p>
-        <ul className="mt-auto flex flex-wrap gap-2 pt-8">
-          {tags.map((tag) => <li key={tag} className="rounded-full border border-white/10 bg-white/[.045] px-3 py-1.5 text-[10px] font-medium text-white/60">{tag}</li>)}
-        </ul>
-      </div>
-    </motion.a>
-  );
-}
+type ProjectProps=(typeof projectsData)[number]&{index:number};
+const accents=["from-violet-500/25 to-fuchsia-500/5","from-cyan-500/25 to-blue-500/5","from-orange-400/20 to-rose-500/5"];
+const labels=["01 / MACHINE LEARNING","02 / AGENTIC AI","03 / ANALYTICS"];
+export default function Project({title,description,tags,url,index}:ProjectProps){return <motion.a href={url} target="_blank" rel="noreferrer" initial={{opacity:0,y:20}} whileInView={{opacity:1,y:0}} whileHover={{y:-6}} viewport={{once:true}} className="group surface relative flex min-h-[390px] flex-col overflow-hidden rounded-[1.75rem] p-6 transition"><div className={"absolute inset-x-0 top-0 h-36 bg-gradient-to-br "+accents[index%accents.length]}/><div className="relative flex h-32 items-start justify-between"><span className="rounded-full border border-slate-200 bg-white/70 px-3 py-1.5 text-[10px] font-semibold tracking-[.12em] text-slate-500 dark:border-white/10 dark:bg-black/10 dark:text-white/45">{labels[index%labels.length]}</span><FiArrowUpRight className="text-xl text-slate-400 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-violet-600 dark:text-white/40"/></div><div className="relative"><h3 className="text-2xl font-semibold tracking-[-.025em] text-slate-950 dark:text-white">{title}</h3><p className="mt-3 leading-7 text-slate-600 dark:text-white/50">{description}</p></div><div className="relative mt-auto flex flex-wrap gap-2 pt-7">{tags.slice(0,5).map(tag=><span key={tag} className="rounded-lg bg-slate-100 px-2.5 py-1.5 text-[10px] font-medium text-slate-600 dark:bg-white/[.06] dark:text-white/55">{tag}</span>)}</div></motion.a>}
