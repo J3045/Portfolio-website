@@ -8,7 +8,8 @@ import Skills from "@/components/skills";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-4">
+    <main className="noise relative flex flex-col items-center overflow-hidden px-5">
+      <div className="grid-bg pointer-events-none absolute inset-x-0 top-0 h-[60rem] opacity-70" />
       <Intro />
       <SectionDivider />
       <About />
