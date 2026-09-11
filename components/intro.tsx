@@ -48,7 +48,7 @@ export default function Intro() {
         <motion.div initial={{ opacity: 0, scale: .94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .6, delay: .1 }} className="hidden lg:block">
           <div className="float-slow relative">
             <div className="absolute -inset-8 rounded-full bg-violet-400/15 blur-3xl dark:bg-violet-500/20" />
-            <div className="relative h-48 w-48 overflow-hidden rounded-[2rem] surface p-2">
+            <div className="relative h-56 w-56 overflow-hidden rounded-[2rem] surface p-2">
               <Image src="/me2.jpg" alt="Jainik Patel" fill priority className="rounded-[1.55rem] object-cover object-center" />
             </div>
             <div className="absolute -bottom-5 -left-8 rounded-2xl surface px-4 py-3">
