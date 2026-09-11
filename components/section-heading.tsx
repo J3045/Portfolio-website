@@ -1,16 +1,4 @@
 import React from "react";
-
-type SectionHeadingProps = { children: React.ReactNode; };
-
-export default function SectionHeading({ children }: SectionHeadingProps) {
-  return (
-    <div className="mb-12 text-center">
-      <div className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-violet-300/70">
-        Selected intelligence
-      </div>
-      <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-6xl">
-        {children}
-      </h2>
-    </div>
-  );
+export default function SectionHeading({ children }: { children: React.ReactNode }) {
+  return <div className="mb-10"><p className="mb-3 text-xs font-semibold uppercase tracking-[.22em] text-violet-600 dark:text-violet-300">Portfolio</p><h2 className="text-4xl font-semibold tracking-[-.035em] text-slate-950 sm:text-5xl dark:text-white">{children}</h2></div>;
 }
