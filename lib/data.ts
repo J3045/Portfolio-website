@@ -24,6 +24,15 @@ export const experiencesData = [
     date: "Current",
   },
   {
+    title: "Full-Stack Developer",
+    companyname: "i-Pangram",
+    location: "Surat, India",
+    description:
+      "Worked on SurveyBooker, a survey management platform, using the MERN stack and MySQL. Built scalable REST APIs for survey operations, integrated the Sprift report generation system, and implemented property mapping with viewer functionality.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Apr 2025 - Jan 2026",
+  },
+  {
     title: "Software Developer",
     companyname: "Sankhyana Consultancy Service",
     location: "Remote",
