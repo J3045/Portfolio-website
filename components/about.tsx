@@ -1,43 +1,5 @@
 "use client";
-
-import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hook";
-
-export default function About() {
-  const { ref } = useSectionInView("About");
-
-  return (
-    <motion.section
-      ref={ref}
-      className="mb-28 max-w-4xl mx-auto px-4 text-center leading-8 sm:mb-40 scroll-mt-28"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
-      id="about"
-    >
-      <SectionHeading>About Me</SectionHeading>
-
-      <p className="mb-5">
-        I&apos;m a <span className="font-medium">Data Analyst with a Computer Engineering background</span>,
-        currently focused on building practical AI and Machine Learning applications. My professional work
-        has given me hands-on experience with <span className="font-medium">Python, SQL, Pandas, data preprocessing,
-        automation and exploratory data analysis</span>—the foundation I now use to build intelligent systems.
-      </p>
-
-      <p className="mb-5">
-        My current focus is <span className="font-medium">Generative AI, LLM applications, Machine Learning,
-        RAG and Agentic AI</span>. I&apos;ve worked on projects involving LLM-assisted data workflows,
-        neural networks and multi-agent architectures, combining my software engineering background
-        with modern AI development.
-      </p>
-
-      <p>
-        I enjoy the full journey from <span className="italic">data → model → application</span>.
-        My goal is to build reliable end-to-end AI products that solve real problems, while continuously
-        deepening my understanding of machine learning systems and modern AI engineering.
-      </p>
-    </motion.section>
-  );
-}
+export default function About(){const {ref}=useSectionInView("About");return <motion.section ref={ref} id="about" className="mb-32 w-full max-w-6xl scroll-mt-28" initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true}}><div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]"><div><SectionHeading>From software to intelligent systems.</SectionHeading></div><div className="grid gap-4 sm:grid-cols-2"><div className="surface rounded-3xl p-6 sm:col-span-2"><p className="text-lg leading-8 text-slate-700 dark:text-white/65">I&apos;m a Data Analyst with a Computer Engineering background and professional software development experience. I&apos;m now combining those foundations to build practical AI and Machine Learning applications.</p></div><div className="surface rounded-3xl p-6"><p className="text-xs font-semibold tracking-[.16em] text-violet-600 dark:text-violet-300">FOUNDATION</p><p className="mt-3 text-slate-600 dark:text-white/55">Python · SQL · Data Processing · Automation · Full-stack Engineering</p></div><div className="surface rounded-3xl p-6"><p className="text-xs font-semibold tracking-[.16em] text-violet-600 dark:text-violet-300">CURRENT FOCUS</p><p className="mt-3 text-slate-600 dark:text-white/55">Machine Learning · LLM Applications · RAG · Agentic AI</p></div></div></div></motion.section>}
