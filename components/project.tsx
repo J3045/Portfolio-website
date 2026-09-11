@@ -1,74 +1,47 @@
 "use client";
-
-import { useRef } from "react";
 import { projectsData } from "@/lib/data";
-import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import { FiArrowUpRight } from "react-icons/fi";
 
-type ProjectProps = (typeof projectsData)[number];
+type ProjectProps = (typeof projectsData)[number] & { index: number };
 
-export default function Project({
-  title,
-  description,
-  tags,
-  imageUrl,
-  url,
-}: ProjectProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+const visuals = [
+  { icon: "◌", label: "ML / LLM", glow: "from-violet-500/30 via-indigo-500/10 to-transparent" },
+  { icon: "✦", label: "AGENT SYSTEM", glow: "from-cyan-500/25 via-emerald-500/10 to-transparent" },
+  { icon: "▦", label: "DATA / INSIGHTS", glow: "from-blue-500/25 via-violet-500/10 to-transparent" },
+];
 
+export default function Project({ title, description, tags, url, index }: ProjectProps) {
+  const visual = visuals[index % visuals.length];
   return (
-    <motion.div
-      ref={ref}
-      style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
-      }}
-      className="group mb-3 sm:mb-8 last:mb-0"
+    <motion.a
+      href={url}
+      target="_blank"
+      rel="noreferrer"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -8 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.35 }}
+      className="group relative min-h-[430px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[.035] p-6 shadow-2xl shadow-black/20"
     >
-        <a href={url}>
-      <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
+      <div className={"absolute inset-x-0 top-0 h-56 bg-gradient-to-br " + visual.glow} />
+      <div className="absolute -right-10 top-12 h-44 w-44 rounded-full border border-white/10 bg-white/[.03] blur-[1px]" />
+      <div className="absolute right-8 top-8 text-7xl font-light text-white/10 transition duration-500 group-hover:scale-110 group-hover:text-white/20">{visual.icon}</div>
+
+      <div className="relative flex h-full flex-col">
+        <div className="mb-20 inline-flex w-fit rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[10px] font-semibold tracking-[0.2em] text-white/50">
+          {visual.label}
         </div>
-
-        <Image
-          src={imageUrl}
-          alt="Project I worked on"
-          quality={95}
-          className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-        transition 
-        group-hover:scale-[1.04]
-        group-hover:-translate-x-3
-        group-hover:translate-y-3
-        group-hover:-rotate-2
-
-        group-even:group-hover:translate-x-3
-        group-even:group-hover:translate-y-3
-        group-even:group-hover:rotate-2
-
-        group-even:right-[initial] group-even:-left-40"
-        />
-      </section>
-      </a>
-    </motion.div>
+        <div className="mb-3 flex items-start justify-between gap-3">
+          <h3 className="text-2xl font-semibold tracking-tight text-white">{title}</h3>
+          <FiArrowUpRight className="mt-1 text-xl text-white/40 transition group-hover:text-white" />
+        </div>
+        <p className="leading-7 text-white/50">{description}</p>
+        <ul className="mt-auto flex flex-wrap gap-2 pt-8">
+          {tags.map((tag) => <li key={tag} className="rounded-full border border-white/10 bg-white/[.045] px-3 py-1.5 text-[10px] font-medium text-white/60">{tag}</li>)}
+        </ul>
+      </div>
+    </motion.a>
   );
 }
